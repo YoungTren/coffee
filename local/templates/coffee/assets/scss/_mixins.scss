@@ -1,0 +1,66 @@
+@mixin container {
+  width: 100%;
+  max-width: $container-max;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@mixin glass-card {
+  background: linear-gradient(135deg, rgba($color-card, 0.6), rgba($color-bg, 0.4));
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba($color-gold, 0.2);
+  border-radius: $radius-lg;
+}
+
+@mixin btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(to right, $color-gold, $color-gold-dark);
+  color: $color-bg;
+  border: none;
+  border-radius: $radius-full;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba($color-gold, 0.4);
+  }
+}
+
+@mixin btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  color: $color-cream;
+  border: 2px solid rgba($color-gold, 0.4);
+  border-radius: $radius-full;
+  text-decoration: none;
+  transition: background 0.3s, border-color 0.3s;
+
+  &:hover {
+    background: rgba($color-gold, 0.1);
+    border-color: $color-gold;
+  }
+}
+
+@mixin respond-md {
+  @media (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin respond-lg {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}

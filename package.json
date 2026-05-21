@@ -1,0 +1,24 @@
+{
+  "name": "coffee-nord-bean",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "predev": "lsof -ti :8080 | xargs kill -9 2>/dev/null || true",
+    "dev": "vite build && concurrently -k -n build,web -c cyan,green \"vite build --watch\" \"tsx dev/preview-server.ts\"",
+    "dev:web": "tsx dev/preview-server.ts",
+    "dev:vite": "vite",
+    "dev:php": "COFFEE_DEV=1 php -S localhost:8080 -t . router.php",
+    "build": "vite build",
+    "preview": "npm run build && tsx dev/preview-server.ts"
+  },
+  "dependencies": {
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "concurrently": "^9.1.2",
+    "sass": "^1.83.0",
+    "tsx": "^4.19.3",
+    "vite": "^6.3.5"
+  }
+}

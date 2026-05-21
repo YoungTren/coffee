@@ -1,0 +1,146 @@
+.coffee-product {
+  position: relative;
+
+  &__card {
+    position: relative;
+    height: 100%;
+    background: linear-gradient(135deg, rgba($color-card, 0.6), rgba($color-bg, 0.4));
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba($color-gold, 0.2);
+    border-radius: $radius-lg;
+    overflow: hidden;
+    transition: border-color 0.5s, transform 0.5s, box-shadow 0.5s;
+
+    &:hover {
+      border-color: rgba($color-gold, 0.4);
+      transform: translateY(-0.75rem);
+      box-shadow: 0 20px 60px rgba($color-gold, 0.3);
+    }
+  }
+
+  &__image-wrap {
+    position: relative;
+    height: 16rem;
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s;
+
+    .coffee-product__card:hover & {
+      transform: scale(1.1);
+    }
+  }
+
+  &__image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, $color-bg, rgba($color-bg, 0.5), transparent);
+  }
+
+  &__add {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: $color-gold;
+    border: none;
+    color: $color-bg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 0.3s, transform 0.3s, background 0.3s;
+
+    .coffee-product__card:hover & {
+      opacity: 1;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+      background: $color-gold-light;
+    }
+  }
+
+  &__body {
+    padding: 1.5rem;
+  }
+
+  &__name {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+    color: $color-cream;
+    transition: color 0.3s;
+
+    .coffee-product__card:hover & {
+      color: $color-gold;
+    }
+  }
+
+  &__desc {
+    margin: 0 0 1rem;
+    font-size: 0.875rem;
+    color: rgba($color-gold, 0.7);
+    line-height: 1.5;
+  }
+
+  &__sizes {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  &__size {
+    flex: 1;
+    padding: 0.5rem;
+    border-radius: $radius-sm;
+    border: 1px solid rgba($color-gold, 0.3);
+    background: rgba($color-card, 0.4);
+    color: rgba($color-gold, 0.8);
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &--active {
+      background: $color-gold;
+      border-color: $color-gold;
+      color: $color-bg;
+    }
+
+    &:hover:not(&--active) {
+      border-color: rgba($color-gold, 0.6);
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.5rem;
+  }
+
+  &__price {
+    font-size: 1.875rem;
+    color: $color-gold;
+  }
+
+  &__cart-btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: $radius-full;
+    border: 1px solid rgba($color-gold, 0.4);
+    background: linear-gradient(to right, rgba($color-gold, 0.2), rgba($color-gold-dark, 0.2));
+    color: $color-cream;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      background: linear-gradient(to right, $color-gold, $color-gold-dark);
+      color: $color-bg;
+    }
+  }
+}

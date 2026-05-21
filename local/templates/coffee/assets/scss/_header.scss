@@ -1,0 +1,108 @@
+.coffee-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba($color-bg, 0.8);
+  backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba($color-gold, 0.1);
+
+  &__inner {
+    @include container;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+  }
+
+  &__logo-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, $color-gold, $color-gold-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-bg;
+  }
+
+  &__logo-text {
+    font-size: 1.25rem;
+    color: $color-cream;
+    letter-spacing: 0.05em;
+  }
+
+  &__nav {
+    display: none;
+    align-items: center;
+    gap: 2rem;
+
+    @include respond-md {
+      display: flex;
+    }
+  }
+
+  &__link {
+    color: rgba($color-gold, 0.8);
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover,
+    &--active {
+      color: $color-cream;
+    }
+
+    &--active {
+      color: $color-cream;
+    }
+  }
+
+  &__order {
+    @include btn-primary;
+    padding: 0.5rem 1.5rem;
+  }
+
+  &__burger {
+    display: flex;
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    color: $color-cream;
+    cursor: pointer;
+
+    @include respond-md {
+      display: none;
+    }
+  }
+
+  &__mobile {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba($color-gold, 0.1);
+
+    &--open {
+      display: flex;
+
+      @include respond-md {
+        display: none;
+      }
+    }
+  }
+
+  &__mobile-order {
+    @include btn-primary;
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -1,0 +1,59 @@
+.coffee-form {
+  @include glass-card;
+  padding: 2rem;
+  border-color: rgba($color-gold, 0.3);
+
+  &__title {
+    margin: 0 0 1.5rem;
+    font-size: 1.875rem;
+    color: $color-cream;
+  }
+
+  &__group {
+    margin-bottom: 1.5rem;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: $color-gold;
+  }
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: rgba($color-bg, 0.6);
+    border: 1px solid rgba($color-gold, 0.3);
+    border-radius: $radius-sm;
+    color: $color-cream;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+
+    &::placeholder {
+      color: rgba($color-gold, 0.5);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $color-gold;
+      box-shadow: 0 0 0 2px rgba($color-gold, 0.2);
+    }
+  }
+
+  &__textarea {
+    resize: none;
+    min-height: 9rem;
+  }
+
+  &__submit {
+    @include btn-primary;
+    width: 100%;
+    border-radius: $radius-sm;
+  }
+
+  &__input--with-icon {
+    padding-left: 3rem;
+  }
+}

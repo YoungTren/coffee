@@ -1,0 +1,648 @@
+@import 'variables';
+@import 'mixins';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: $font-family;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $color-cream;
+  background: $color-bg;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+.coffee-page {
+  width: 100%;
+  min-height: 100vh;
+  background: $color-bg;
+  padding-top: $nav-height;
+}
+
+.coffee-container {
+  @include container;
+}
+
+.coffee-section {
+  position: relative;
+  padding: 5rem 1.5rem;
+
+  &--gradient {
+    background: linear-gradient(to bottom, $color-bg-alt, $color-bg);
+  }
+
+  &--gradient-reverse {
+    background: linear-gradient(to bottom, $color-bg, $color-bg-alt, $color-bg);
+  }
+
+  &__title {
+    margin: 0 0 1rem;
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    font-weight: 500;
+    color: $color-cream;
+    text-align: center;
+  }
+
+  &__subtitle {
+    margin: 0 auto;
+    max-width: 42rem;
+    font-size: 1.125rem;
+    color: rgba($color-gold, 0.8);
+    text-align: center;
+  }
+
+  &__header-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  &__header-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: $radius-md;
+    background: linear-gradient(135deg, rgba($color-gold, 0.2), rgba($color-gold-dark, 0.1));
+    border: 1px solid rgba($color-gold, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-gold;
+    flex-shrink: 0;
+  }
+}
+
+.coffee-hero {
+  position: relative;
+  min-height: calc(100vh - #{$nav-height});
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 8rem 1.5rem 5rem;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to bottom, rgba($color-bg, 0.6), rgba($color-bg, 0.8), $color-bg),
+      linear-gradient(to right, rgba($color-bg, 0.9), transparent, rgba($color-bg, 0.7));
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    @include container;
+    width: 100%;
+    min-height: calc(100vh - #{$nav-height} - 13rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__center {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 56rem;
+    width: 100%;
+  }
+
+  &__title {
+    margin: 0 0 2rem;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: $color-cream;
+  }
+
+  &__title-accent {
+    display: block;
+    background: linear-gradient(to right, $color-gold, $color-gold-light, $color-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  &__text {
+    margin: 0 auto 2rem;
+    max-width: 42rem;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: rgba($color-gold, 0.9);
+    line-height: 1.6;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+
+    @include respond-md {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &__float-card {
+    @include glass-card;
+    padding: 1.5rem;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+    display: none;
+
+    @include respond-lg {
+      display: block;
+      position: absolute;
+      z-index: 1;
+    }
+
+    &--tl {
+      top: 0;
+      left: 0;
+    }
+
+    &--tr {
+      top: 5rem;
+      right: 0;
+    }
+
+    &--bl {
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &__cards-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 2rem;
+
+    @include respond-lg {
+      display: none;
+    }
+
+    .coffee-hero__float-card {
+      display: block;
+      position: static;
+      width: 100%;
+    }
+  }
+
+  &__float-inner {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  &__float-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, $color-gold, $color-gold-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-bg;
+    flex-shrink: 0;
+  }
+
+  &__float-title {
+    margin: 0;
+    color: $color-cream;
+    font-weight: 500;
+  }
+
+  &__float-sub {
+    margin: 0;
+    font-size: 0.875rem;
+    color: $color-gold;
+  }
+
+  &__orb {
+    position: absolute;
+    width: 24rem;
+    height: 24rem;
+    border-radius: 50%;
+    filter: blur(120px);
+    pointer-events: none;
+
+    &--1 {
+      top: 25%;
+      left: 25%;
+      background: rgba($color-gold, 0.1);
+    }
+
+    &--2 {
+      bottom: 25%;
+      right: 25%;
+      background: rgba($color-gold-dark, 0.1);
+    }
+  }
+}
+
+.coffee-feature {
+  @include glass-card;
+  padding: 2rem;
+  height: 100%;
+  transition: border-color 0.5s, transform 0.5s, box-shadow 0.5s;
+
+  &:hover {
+    border-color: rgba($color-gold, 0.4);
+    transform: translateY(-0.5rem);
+    box-shadow: 0 0 40px rgba($color-gold, 0.2);
+  }
+
+  &__icon {
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 1.5rem;
+    border-radius: $radius-md;
+    background: linear-gradient(135deg, rgba($color-gold, 0.2), rgba($color-gold-dark, 0.1));
+    border: 1px solid rgba($color-gold, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-gold;
+    transition: transform 0.5s;
+
+    .coffee-feature:hover & {
+      transform: scale(1.1) rotate(6deg);
+    }
+  }
+
+  &__title {
+    margin: 0 0 1rem;
+    font-size: 1.5rem;
+    color: $color-cream;
+    transition: color 0.3s;
+
+    .coffee-feature:hover & {
+      color: $color-gold;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    color: rgba($color-gold, 0.8);
+    line-height: 1.6;
+  }
+}
+
+.coffee-grid {
+  display: grid;
+  gap: 2rem;
+
+  &--3 {
+    grid-template-columns: 1fr;
+
+    @include respond-md {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &--2 {
+    grid-template-columns: 1fr;
+
+    @include respond-lg {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &--4 {
+    grid-template-columns: 1fr;
+
+    @include respond-md {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-lg {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &--products-menu {
+    grid-template-columns: 1fr;
+
+    @include respond-md {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-lg {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.coffee-about-block {
+  display: grid;
+  gap: 4rem;
+  align-items: center;
+
+  @include respond-lg {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__image-wrap {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba($color-gold, 0.2), transparent);
+      border-radius: $radius-lg;
+      filter: blur(48px);
+    }
+  }
+
+  &__image {
+    position: relative;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+
+    img {
+      width: 100%;
+      height: 37.5rem;
+      object-fit: cover;
+    }
+  }
+
+  &__badge {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: rgba($color-gold, 0.1);
+    border: 1px solid rgba($color-gold, 0.3);
+    border-radius: $radius-full;
+    color: $color-gold;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    margin: 0 0 1.5rem;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    color: $color-cream;
+  }
+
+  &__text {
+    margin: 0 0 1.5rem;
+    color: rgba($color-gold, 0.9);
+    line-height: 1.7;
+  }
+
+  &__stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__stat-value {
+    font-size: 2.25rem;
+    color: $color-gold;
+    margin-bottom: 0.5rem;
+  }
+
+  &__stat-label {
+    color: rgba($color-cream, 0.7);
+  }
+}
+
+.coffee-value-card {
+  @include glass-card;
+  padding: 2rem;
+  transition: border-color 0.3s;
+
+  &:hover {
+    border-color: rgba($color-gold, 0.4);
+  }
+
+  &__icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: $radius-md;
+    background: linear-gradient(135deg, rgba($color-gold, 0.2), rgba($color-gold-dark, 0.1));
+    border: 1px solid rgba($color-gold, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-gold;
+  }
+
+  &__title {
+    margin: 0 0 1rem;
+    font-size: 1.5rem;
+    color: $color-cream;
+  }
+
+  &__text {
+    margin: 0;
+    color: rgba($color-gold, 0.8);
+    line-height: 1.6;
+  }
+}
+
+.coffee-team-card {
+  @include glass-card;
+  padding: 2rem;
+  text-align: center;
+  transition: border-color 0.5s;
+
+  &:hover {
+    border-color: rgba($color-gold, 0.4);
+  }
+
+  &__avatar {
+    width: 6rem;
+    height: 6rem;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba($color-gold, 0.2), rgba($color-gold-dark, 0.1));
+    border: 1px solid rgba($color-gold, 0.3);
+  }
+
+  &__name {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+    color: $color-cream;
+  }
+
+  &__role {
+    margin: 0;
+    color: rgba($color-gold, 0.8);
+  }
+}
+
+.coffee-visit-card {
+  @include glass-card;
+  padding: 3rem;
+  border-color: rgba($color-gold, 0.3);
+}
+
+.coffee-contact-card {
+  @include glass-card;
+  padding: 1.5rem;
+
+  &__row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  &__icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: $radius-sm;
+    background: linear-gradient(135deg, rgba($color-gold, 0.2), rgba($color-gold-dark, 0.1));
+    border: 1px solid rgba($color-gold, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-gold;
+    flex-shrink: 0;
+  }
+
+  &__title {
+    margin: 0 0 0.5rem;
+    font-size: 1.25rem;
+    color: $color-cream;
+  }
+
+  &__text {
+    margin: 0;
+    color: rgba($color-gold, 0.8);
+    line-height: 1.6;
+  }
+}
+
+.coffee-social {
+  display: flex;
+  gap: 1rem;
+
+  &__link {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: $color-card;
+    border: 1px solid rgba($color-gold, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-gold;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+
+    &:hover {
+      background: $color-gold;
+      color: $color-bg;
+    }
+  }
+}
+
+.coffee-hours {
+  @include glass-card;
+  padding: 1.5rem;
+  border-color: rgba($color-gold, 0.3);
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.25rem 0;
+    color: rgba($color-gold, 0.8);
+
+    span:last-child {
+      color: $color-cream;
+    }
+  }
+}
+
+.coffee-page-header {
+  padding: 5rem 1.5rem;
+  background: linear-gradient(to bottom, $color-bg-alt, $color-bg);
+  text-align: center;
+
+  &__title {
+    margin: 0 0 1.5rem;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    color: $color-cream;
+  }
+
+  &__text {
+    margin: 0 auto;
+    max-width: 42rem;
+    font-size: 1.125rem;
+    color: rgba($color-gold, 0.8);
+  }
+}
+
+.coffee-btn-outline {
+  @include btn-outline;
+}
+
+.coffee-text-center {
+  text-align: center;
+}
+
+.coffee-mt-12 {
+  margin-top: 3rem;
+}
+
+.coffee-decoration-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(150px);
+  pointer-events: none;
+
+  &--tr {
+    top: 0;
+    right: 0;
+    width: 31.25rem;
+    height: 31.25rem;
+    background: rgba($color-gold, 0.05);
+  }
+}
+
+@import 'header';
+@import 'footer';
+@import 'product-card';
+@import 'subscription';
+@import 'form';
