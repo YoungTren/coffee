@@ -11,6 +11,7 @@ const props = defineProps({
   description: { type: String, required: true },
   image: { type: String, required: true },
   basePrice: { type: Number, required: true },
+  noSizes: { type: Boolean, default: false },
 });
 
 const sizes = {
@@ -28,11 +29,25 @@ const onImageError = () => {
   imgSrc.value = FALLBACK_IMAGE;
 };
 
-const currentPrice = computed(() =>
-  Math.round(props.basePrice * sizes[selectedSize.value].multiplier),
-);
+const currentPrice = computed(() => {
+  if (props.noSizes) {
+    return props.basePrice;
+  }
+  return Math.round(props.basePrice * sizes[selectedSize.value].multiplier);
+});
 
 const addToCart = () => {
+  if (props.noSizes) {
+    addItem({
+      id: props.name,
+      name: props.name,
+      image: imgSrc.value,
+      price: props.basePrice,
+      sizeLabel: '',
+    });
+    showToast(`${props.name} добавлен в корзину`);
+    return;
+  }
   const size = sizes[selectedSize.value];
   addItem({
     id: `${props.name}-${selectedSize.value}`,
@@ -58,7 +73,7 @@ const addToCart = () => {
       <div class="coffee-product__body">
         <h3 class="coffee-product__name">{{ name }}</h3>
         <p class="coffee-product__desc">{{ description }}</p>
-        <div class="coffee-product__sizes">
+        <div v-if="!noSizes" class="coffee-product__sizes">
           <button
             v-for="(size, key) in sizes"
             :key="key"

@@ -5,30 +5,30 @@
   },
   "products": {
     "home": [
-      { "name": "Капучино", "description": "Насыщенный эспрессо с бархатистым молоком и пенкой", "image": "https://images.unsplash.com/photo-1572442383556-6814eac8a827?auto=format&fit=crop&w=1080&q=80", "basePrice": 350 },
-      { "name": "Латте", "description": "Мягкий эспрессо с шелковистым молоком", "image": "https://images.unsplash.com/photo-1461023058943-07fcbe16d930?auto=format&fit=crop&w=1080&q=80", "basePrice": 370 },
-      { "name": "Флэт Уайт", "description": "Крепкий эспрессо с микропенкой для кремовой текстуры", "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1080&q=80", "basePrice": 390 },
-      { "name": "Эспрессо", "description": "Чистый, насыщенный шот нашей фирменной обжарки", "image": "https://images.unsplash.com/photo-1510590253492-d798871a58a0?auto=format&fit=crop&w=1080&q=80", "basePrice": 270 }
+      { "name": "Капучино", "description": "Насыщенный эспрессо с бархатистым молоком и пенкой", "image": "/local/templates/coffee/assets/images/hot/cappuccino.png", "basePrice": 350 },
+      { "name": "Латте", "description": "Мягкий эспрессо с шелковистым молоком", "image": "/local/templates/coffee/assets/images/hot/latte.png", "basePrice": 370 },
+      { "name": "Флэт Уайт", "description": "Крепкий эспрессо с микропенкой для кремовой текстуры", "image": "/local/templates/coffee/assets/images/hot/flat-white.png", "basePrice": 390 },
+      { "name": "Эспрессо", "description": "Чистый, насыщенный шот нашей фирменной обжарки", "image": "/local/templates/coffee/assets/images/hot/espresso.png", "basePrice": 270 }
     ],
     "hot": [
-      { "name": "Эспрессо", "description": "Чистый, насыщенный шот нашей фирменной обжарки", "image": "https://images.unsplash.com/photo-1510590253492-d798871a58a0?auto=format&fit=crop&w=1080&q=80", "basePrice": 270 },
-      { "name": "Американо", "description": "Классический эспрессо с горячей водой", "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1080&q=80", "basePrice": 290 },
-      { "name": "Капучино", "description": "Насыщенный эспрессо с бархатистым молоком и пенкой", "image": "https://images.unsplash.com/photo-1572442383556-6814eac8a827?auto=format&fit=crop&w=1080&q=80", "basePrice": 350 },
-      { "name": "Латте", "description": "Мягкий эспрессо с шелковистым молоком", "image": "https://images.unsplash.com/photo-1461023058943-07fcbe16d930?auto=format&fit=crop&w=1080&q=80", "basePrice": 370 },
-      { "name": "Флэт Уайт", "description": "Крепкий эспрессо с микропенкой для кремовой текстуры", "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1080&q=80", "basePrice": 390 },
-      { "name": "Мокка", "description": "Эспрессо с шоколадом и взбитыми сливками", "image": "https://images.unsplash.com/photo-1578314675243-f4baba69e1c6?auto=format&fit=crop&w=1080&q=80", "basePrice": 410 }
+      { "name": "Эспрессо", "description": "Чистый, насыщенный шот нашей фирменной обжарки", "image": "/local/templates/coffee/assets/images/hot/espresso.png", "basePrice": 270 },
+      { "name": "Американо", "description": "Классический эспрессо с горячей водой", "image": "/local/templates/coffee/assets/images/hot/americano.png", "basePrice": 290 },
+      { "name": "Капучино", "description": "Насыщенный эспрессо с бархатистым молоком и пенкой", "image": "/local/templates/coffee/assets/images/hot/cappuccino.png", "basePrice": 350 },
+      { "name": "Латте", "description": "Мягкий эспрессо с шелковистым молоком", "image": "/local/templates/coffee/assets/images/hot/latte.png", "basePrice": 370 },
+      { "name": "Флэт Уайт", "description": "Крепкий эспрессо с микропенкой для кремовой текстуры", "image": "/local/templates/coffee/assets/images/hot/flat-white.png", "basePrice": 390 },
+      { "name": "Мокка", "description": "Эспрессо с шоколадом и взбитыми сливками", "image": "/local/templates/coffee/assets/images/hot/mocha.png", "basePrice": 410 }
     ],
     "cold": [
-      { "name": "Колд брю", "description": "Холодная заварка кофе, 18 часов экстракции", "image": "https://images.unsplash.com/photo-1517701556738-103905ce6c16?auto=format&fit=crop&w=1080&q=80", "basePrice": 390 },
-      { "name": "Айс-латте", "description": "Охлаждённый эспрессо с молоком и льдом", "image": "https://images.unsplash.com/photo-1517487881594-2787a3a602ec?auto=format&fit=crop&w=1080&q=80", "basePrice": 380 },
-      { "name": "Фраппе", "description": "Взбитый холодный кофе с молоком и сиропом", "image": "https://images.unsplash.com/photo-1572490122747-3969a75cbb27?auto=format&fit=crop&w=1080&q=80", "basePrice": 420 },
-      { "name": "Нитро кофе", "description": "Колд брю, насыщенный азотом для кремовой текстуры", "image": "https://images.unsplash.com/photo-1517701556738-103905ce6c16?auto=format&fit=crop&w=1080&q=80", "basePrice": 450 }
+      { "name": "Колд брю", "description": "Холодная заварка кофе, 18 часов экстракции", "image": "/local/templates/coffee/assets/images/cold/cold-brew.png", "basePrice": 390 },
+      { "name": "Айс-латте", "description": "Охлаждённый эспрессо с молоком и льдом", "image": "/local/templates/coffee/assets/images/cold/ice-latte.png", "basePrice": 380 },
+      { "name": "Фраппе", "description": "Взбитый холодный кофе с молоком и сиропом", "image": "/local/templates/coffee/assets/images/cold/frappe.png", "basePrice": 420 },
+      { "name": "Нитро кофе", "description": "Колд брю, насыщенный азотом для кремовой текстуры", "image": "/local/templates/coffee/assets/images/cold/nitro.png", "basePrice": 450 }
     ],
     "desserts": [
-      { "name": "Круассан", "description": "Французский слоеный круассан из свежего теста", "image": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=1080&q=80", "basePrice": 180 },
-      { "name": "Брауни", "description": "Насыщенный шоколадный десерт с орехами", "image": "https://images.unsplash.com/photo-1607924488827-31d9eac1ac38?auto=format&fit=crop&w=1080&q=80", "basePrice": 220 },
-      { "name": "Чизкейк", "description": "Классический сливочный чизкейк на основе печенья", "image": "https://images.unsplash.com/photo-1524354160481-2d45aa7edd02?auto=format&fit=crop&w=1080&q=80", "basePrice": 290 },
-      { "name": "Тирамису", "description": "Итальянский десерт с маскарпоне и кофе", "image": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=1080&q=80", "basePrice": 320 }
+      { "name": "Круассан", "description": "Французский слоеный круассан из свежего теста", "image": "/local/templates/coffee/assets/images/desserts/croissant.png", "basePrice": 180, "noSizes": true },
+      { "name": "Брауни", "description": "Насыщенный шоколадный десерт с орехами", "image": "/local/templates/coffee/assets/images/desserts/brownie.png", "basePrice": 220, "noSizes": true },
+      { "name": "Чизкейк", "description": "Классический сливочный чизкейк на основе печенья", "image": "/local/templates/coffee/assets/images/desserts/cheesecake.png", "basePrice": 290, "noSizes": true },
+      { "name": "Тирамису", "description": "Итальянский десерт с маскарпоне и кофе", "image": "/local/templates/coffee/assets/images/desserts/tiramisu.png", "basePrice": 320, "noSizes": true }
     ]
   },
   "team": [

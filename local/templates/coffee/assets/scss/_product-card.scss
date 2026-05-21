@@ -9,12 +9,11 @@
     border: 1px solid rgba($color-gold, 0.2);
     border-radius: $radius-lg;
     overflow: hidden;
-    transition: border-color 0.5s, transform 0.5s, box-shadow 0.5s;
+    transition: border-color 0.5s, transform 0.5s;
 
     &:hover {
       border-color: rgba($color-gold, 0.4);
       transform: translateY(-0.75rem);
-      box-shadow: 0 20px 60px rgba($color-gold, 0.3);
     }
   }
 
@@ -36,9 +35,7 @@
   }
 
   &__image-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, $color-bg, rgba($color-bg, 0.5), transparent);
+    display: none;
   }
 
   &__add {

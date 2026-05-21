@@ -173,7 +173,9 @@ onUnmounted(() => {
             <img :src="item.image" :alt="item.name" class="coffee-cart__thumb" />
             <div class="coffee-cart__info">
               <p class="coffee-cart__name">{{ item.name }}</p>
-              <p class="coffee-cart__meta">Размер: {{ item.sizeLabel }} · {{ item.price }} ₽</p>
+              <p class="coffee-cart__meta">
+                <template v-if="item.sizeLabel">Размер: {{ item.sizeLabel }} · </template>{{ item.price }} ₽
+              </p>
               <div class="coffee-cart__row">
                 <div class="coffee-cart__qty">
                   <button type="button" aria-label="Уменьшить" @click="changeQuantity(item.id, -1)">−</button>
