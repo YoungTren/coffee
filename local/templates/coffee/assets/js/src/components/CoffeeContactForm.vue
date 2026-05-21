@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+import { useToast } from '../composables/toast';
 
 const formData = ref({
   name: '',
@@ -8,8 +9,10 @@ const formData = ref({
   message: '',
 });
 
+const { show: showToast } = useToast();
+
 const handleSubmit = () => {
-  alert('Спасибо за ваше сообщение! Мы свяжемся с вами в ближайшее время.');
+  showToast('Спасибо! Мы свяжемся с вами в ближайшее время.');
   formData.value = { name: '', email: '', phone: '', message: '' };
 };
 </script>

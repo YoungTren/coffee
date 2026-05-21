@@ -20,19 +20,19 @@
     ],
     "cold": [
       { "name": "Колд брю", "description": "Холодная заварка кофе, 18 часов экстракции", "image": "https://images.unsplash.com/photo-1517701556738-103905ce6c16?auto=format&fit=crop&w=1080&q=80", "basePrice": 390 },
-      { "name": "Айс латте", "description": "Охлажденный эспрессо с молоком и льдом", "image": "https://images.unsplash.com/photo-1517487881594-2787a3a602ec?auto=format&fit=crop&w=1080&q=80", "basePrice": 380 },
+      { "name": "Айс-латте", "description": "Охлаждённый эспрессо с молоком и льдом", "image": "https://images.unsplash.com/photo-1517487881594-2787a3a602ec?auto=format&fit=crop&w=1080&q=80", "basePrice": 380 },
       { "name": "Фраппе", "description": "Взбитый холодный кофе с молоком и сиропом", "image": "https://images.unsplash.com/photo-1572490122747-3969a75cbb27?auto=format&fit=crop&w=1080&q=80", "basePrice": 420 },
       { "name": "Нитро кофе", "description": "Колд брю, насыщенный азотом для кремовой текстуры", "image": "https://images.unsplash.com/photo-1517701556738-103905ce6c16?auto=format&fit=crop&w=1080&q=80", "basePrice": 450 }
     ],
     "desserts": [
       { "name": "Круассан", "description": "Французский слоеный круассан из свежего теста", "image": "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=1080&q=80", "basePrice": 180 },
-      { "name": "брауни", "description": "Насыщенный шоколадный десерт с орехами", "image": "https://images.unsplash.com/photo-1607924488827-31d9eac1ac38?auto=format&fit=crop&w=1080&q=80", "basePrice": 220 },
+      { "name": "Брауни", "description": "Насыщенный шоколадный десерт с орехами", "image": "https://images.unsplash.com/photo-1607924488827-31d9eac1ac38?auto=format&fit=crop&w=1080&q=80", "basePrice": 220 },
       { "name": "Чизкейк", "description": "Классический сливочный чизкейк на основе печенья", "image": "https://images.unsplash.com/photo-1524354160481-2d45aa7edd02?auto=format&fit=crop&w=1080&q=80", "basePrice": 290 },
       { "name": "Тирамису", "description": "Итальянский десерт с маскарпоне и кофе", "image": "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=1080&q=80", "basePrice": 320 }
     ]
   },
   "team": [
-    { "name": "Анна Петрова", "role": "Основатель и Главный обжарщик" },
+    { "name": "Анна Петрова", "role": "Основатель и главный обжарщик" },
     { "name": "Михаил Иванов", "role": "Ведущий бариста" },
     { "name": "Елена Смирнова", "role": "Менеджер по качеству" }
   ]

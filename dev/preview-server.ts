@@ -7,7 +7,7 @@ const ROOT = join(import.meta.dirname, '..');
 const PORT = Number(process.env.PORT ?? 8080);
 
 const routes: Record<string, { title: string; path: string; include: string }> = {
-  '/': { title: 'Главная — Nord Bean', path: '/', include: 'home/content.php' },
+  '/': { title: 'Nord Bean — Искусный кофе для успешного утра', path: '/', include: 'home/content.php' },
   '/menu': { title: 'Меню — Nord Bean', path: '/menu/', include: 'menu/content.php' },
   '/menu/': { title: 'Меню — Nord Bean', path: '/menu/', include: 'menu/content.php' },
   '/about': { title: 'О нас — Nord Bean', path: '/about/', include: 'about/content.php' },

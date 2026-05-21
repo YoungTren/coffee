@@ -4,7 +4,7 @@ require __DIR__ . '/../products.php';
 <section class="coffee-page-header">
     <div class="coffee-container">
         <h1 class="coffee-page-header__title">Наше меню</h1>
-        <p class="coffee-page-header__text">Откройте для себя широкий выбор кофейных напитков и десертов, приготовленных с любовью и мастерством</p>
+        <p class="coffee-page-header__text">Широкий выбор кофейных напитков и десертов, приготовленных с любовью и мастерством</p>
     </div>
 </section>
 

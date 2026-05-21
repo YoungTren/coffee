@@ -1,10 +1,12 @@
 <script setup>
 import { ref } from 'vue';
+import { useToast } from '../composables/toast';
 
 const email = ref('');
+const { show: showToast } = useToast();
 
 const handleSubmit = () => {
-  console.log('Subscribe:', email.value);
+  showToast('Вы подписаны! Скидка 10% на первый заказ уже ждёт вас.');
   email.value = '';
 };
 </script>
@@ -41,7 +43,7 @@ const handleSubmit = () => {
           </div>
         </form>
         <p class="coffee-subscription__note">
-          Присоединились 5000+ любителей кофе. Отписаться можно в любое время.
+          К нам уже присоединились 5000+ любителей кофе. Отписаться можно в любой момент.
         </p>
       </div>
     </div>

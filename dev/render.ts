@@ -103,7 +103,7 @@ export function renderFooter(): string {
                     </div>
                     <p class="coffee-footer__brand-text">
                         Привносим скандинавскую кофейную культуру в ваш ежедневный ритуал с 2016 года.
-                        Создано с любовью, подается с заботой.
+                        Создано с любовью, подаётся с заботой.
                     </p>
                     <div class="coffee-social" style="margin-top:1.5rem">
                         <a href="#" class="coffee-social__link" aria-label="Instagram"><svg width="20" height="20"><use href="#icon-instagram"/></svg></a>
@@ -126,9 +126,9 @@ export function renderFooter(): string {
                         <svg width="20" height="20" style="vertical-align:middle;margin-right:0.5rem"><use href="#icon-clock"/></svg>
                         Часы работы
                     </h4>
-                    <div class="coffee-footer__hours-item"><span>Понедельник - Пятница</span><span>7:00 - 20:00</span></div>
-                    <div class="coffee-footer__hours-item"><span>Суббота</span><span>8:00 - 21:00</span></div>
-                    <div class="coffee-footer__hours-item"><span>Воскресенье</span><span>8:00 - 19:00</span></div>
+                    <div class="coffee-footer__hours-item"><span>Понедельник — пятница</span><span>7:00 — 20:00</span></div>
+                    <div class="coffee-footer__hours-item"><span>Суббота</span><span>8:00 — 21:00</span></div>
+                    <div class="coffee-footer__hours-item"><span>Воскресенье</span><span>8:00 — 19:00</span></div>
                 </div>
                 <div>
                     <h4 class="coffee-footer__heading">Свяжитесь с нами</h4>
@@ -156,6 +156,7 @@ export function renderFooter(): string {
             </div>
         </div>
     </footer>
+    <div id="coffee-app"></div>
 </div>
 
 <script type="module" src="/local/templates/coffee/assets/dist/main.js"></script>

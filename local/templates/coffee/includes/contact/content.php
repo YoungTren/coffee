@@ -10,7 +10,7 @@
         <div class="coffee-grid coffee-grid--2">
             <div>
                 <h2 class="coffee-about-block__title" style="margin-bottom:2rem">Наши контакты</h2>
-                <p class="coffee-about-block__text" style="margin-bottom:2rem">Мы всегда рады вашим вопросам, предложениям и отзывам. Свяжитесь с нами любым удобным способом.</p>
+                <p class="coffee-about-block__text" style="margin-bottom:2rem">Мы рады ответить на ваши вопросы, предложения и отзывы.</p>
 
                 <div class="coffee-contact-card" style="margin-bottom:1.5rem">
                     <div class="coffee-contact-card__row">
@@ -49,9 +49,9 @@
 
                 <div class="coffee-hours">
                     <h4 class="coffee-contact-card__title" style="margin-bottom:1rem">Часы работы</h4>
-                    <div class="coffee-hours__row"><span>Понедельник - Пятница</span><span>7:00 - 20:00</span></div>
-                    <div class="coffee-hours__row"><span>Суббота</span><span>8:00 - 21:00</span></div>
-                    <div class="coffee-hours__row"><span>Воскресенье</span><span>8:00 - 19:00</span></div>
+                    <div class="coffee-hours__row"><span>Понедельник — пятница</span><span>7:00 — 20:00</span></div>
+                    <div class="coffee-hours__row"><span>Суббота</span><span>8:00 — 21:00</span></div>
+                    <div class="coffee-hours__row"><span>Воскресенье</span><span>8:00 — 19:00</span></div>
                 </div>
             </div>
 

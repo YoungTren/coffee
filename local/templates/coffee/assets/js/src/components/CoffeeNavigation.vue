@@ -1,11 +1,13 @@
 <script setup>
 import { ref } from 'vue';
+import { useCart } from '../composables/cart';
 
 const props = defineProps({
   current: { type: String, default: '/' },
 });
 
 const isMenuOpen = ref(false);
+const { totalCount, openCart } = useCart();
 
 const links = [
   { path: '/', label: 'Главная' },
@@ -45,12 +47,24 @@ const closeMenu = () => {
         >
           {{ link.label }}
         </a>
+        <button type="button" class="coffee-header__cart" aria-label="Открыть корзину" @click="openCart">
+          <svg width="22" height="22"><use href="#icon-shopping-cart" /></svg>
+          <span class="coffee-header__cart-text">Корзина</span>
+          <span v-if="totalCount > 0" class="coffee-header__cart-badge">{{ totalCount }}</span>
+        </button>
         <a href="/menu/" class="coffee-header__order">Заказать</a>
       </nav>
 
-      <button type="button" class="coffee-header__burger" aria-label="Меню" @click="isMenuOpen = !isMenuOpen">
-        <svg width="24" height="24"><use :href="isMenuOpen ? '#icon-x' : '#icon-menu'" /></svg>
-      </button>
+      <div class="coffee-header__actions-mobile">
+        <button type="button" class="coffee-header__cart" aria-label="Открыть корзину" @click="openCart">
+          <svg width="22" height="22"><use href="#icon-shopping-cart" /></svg>
+          <span class="coffee-header__cart-text">Корзина</span>
+          <span v-if="totalCount > 0" class="coffee-header__cart-badge">{{ totalCount }}</span>
+        </button>
+        <button type="button" class="coffee-header__burger" aria-label="Меню" @click="isMenuOpen = !isMenuOpen">
+          <svg width="24" height="24"><use :href="isMenuOpen ? '#icon-x' : '#icon-menu'" /></svg>
+        </button>
+      </div>
     </div>
 
     <div class="coffee-container coffee-header__mobile" :class="{ 'coffee-header__mobile--open': isMenuOpen }">
@@ -64,6 +78,9 @@ const closeMenu = () => {
       >
         {{ link.label }}
       </a>
+      <button type="button" class="coffee-header__mobile-order coffee-header__mobile-order--cart" @click="openCart(); closeMenu()">
+        Корзина{{ totalCount > 0 ? ` (${totalCount})` : '' }}
+      </button>
       <a href="/menu/" class="coffee-header__mobile-order" @click="closeMenu">Заказать</a>
     </div>
   </header>

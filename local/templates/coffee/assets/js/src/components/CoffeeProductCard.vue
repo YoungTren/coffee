@@ -1,5 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue';
+import { useCart } from '../composables/cart';
+import { useToast } from '../composables/toast';
 
 const FALLBACK_IMAGE =
   'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1080&q=80';
@@ -19,6 +21,8 @@ const sizes = {
 
 const selectedSize = ref('medium');
 const imgSrc = ref(props.image);
+const { addItem } = useCart();
+const { show: showToast } = useToast();
 
 const onImageError = () => {
   imgSrc.value = FALLBACK_IMAGE;
@@ -27,6 +31,18 @@ const onImageError = () => {
 const currentPrice = computed(() =>
   Math.round(props.basePrice * sizes[selectedSize.value].multiplier),
 );
+
+const addToCart = () => {
+  const size = sizes[selectedSize.value];
+  addItem({
+    id: `${props.name}-${selectedSize.value}`,
+    name: props.name,
+    image: imgSrc.value,
+    price: currentPrice.value,
+    sizeLabel: size.label,
+  });
+  showToast(`${props.name} (${size.label}) добавлен в корзину`);
+};
 </script>
 
 <template>
@@ -35,7 +51,7 @@ const currentPrice = computed(() =>
       <div class="coffee-product__image-wrap">
         <img :src="imgSrc" :alt="name" class="coffee-product__image" loading="lazy" @error="onImageError" />
         <div class="coffee-product__image-overlay"></div>
-        <button type="button" class="coffee-product__add" aria-label="Добавить">
+        <button type="button" class="coffee-product__add" aria-label="Добавить" @click="addToCart">
           <svg width="24" height="24"><use href="#icon-plus" /></svg>
         </button>
       </div>
@@ -56,7 +72,7 @@ const currentPrice = computed(() =>
         </div>
         <div class="coffee-product__footer">
           <span class="coffee-product__price">{{ currentPrice }} ₽</span>
-          <button type="button" class="coffee-product__cart-btn">В корзину</button>
+          <button type="button" class="coffee-product__cart-btn" @click="addToCart">В корзину</button>
         </div>
       </div>
     </div>
