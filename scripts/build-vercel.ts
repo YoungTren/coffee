@@ -1,9 +1,10 @@
-import { cpSync, mkdirSync, writeFileSync } from 'node:fs';
+import { cpSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { renderPage } from '../dev/render.ts';
 
 const ROOT = join(import.meta.dirname, '..');
 const DIST = join(ROOT, 'dist');
+const TEMPLATE_ASSETS = join(ROOT, 'local/templates/coffee/assets');
 
 const pages = [
   {
@@ -37,6 +38,14 @@ for (const page of pages) {
   writeFileSync(join(DIST, page.file), renderPage(page.title, page.path, page.include));
 }
 
-cpSync(join(ROOT, 'local/templates/coffee/assets/dist'), join(DIST, 'local/templates/coffee/assets/dist'), {
+cpSync(join(TEMPLATE_ASSETS, 'dist'), join(DIST, 'local/templates/coffee/assets/dist'), {
   recursive: true,
 });
+
+cpSync(join(TEMPLATE_ASSETS, 'images'), join(DIST, 'local/templates/coffee/assets/images'), {
+  recursive: true,
+});
+
+if (!existsSync(join(DIST, 'index.html'))) {
+  throw new Error('dist/index.html was not generated');
+}
