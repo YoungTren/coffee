@@ -8,7 +8,8 @@
     "dev:web": "tsx dev/preview-server.ts",
     "dev:vite": "vite",
     "dev:php": "COFFEE_DEV=1 php -S localhost:8080 -t . router.php",
-    "build": "vite build",
+    "build": "vite build && tsx scripts/build-vercel.ts",
+    "build:vercel": "npm run build",
     "preview": "npm run build && tsx dev/preview-server.ts"
   },
   "dependencies": {
