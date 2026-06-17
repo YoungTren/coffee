@@ -3,8 +3,7 @@ import { ref, computed } from 'vue';
 import { useCart } from '../composables/cart';
 import { useToast } from '../composables/toast';
 
-const FALLBACK_IMAGE =
-  'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1080&q=80';
+const FALLBACK_IMAGE = '/local/templates/coffee/assets/images/media/hero.jpg';
 
 const props = defineProps({
   name: { type: String, required: true },
